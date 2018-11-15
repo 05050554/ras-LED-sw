@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+ledpin = 4
+switchpin = 23
+GPIO.setup(ledpin,GPIO.OUT)
+GPIO.setup(switchpin,GPIO.IN)
+
+while True:
+        if GPIO.input(switchpin) is 1:
+                LEDon = GPIO.output(ledpin,1)
+        else:
+                LEDoff = GPIO.output(ledpin,0)
